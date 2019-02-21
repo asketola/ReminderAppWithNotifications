@@ -31,7 +31,7 @@ class GroupViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier:"Cell", for: indexPath)
         let reminder = group.items[indexPath.row]
         
-        if reminder.isCommplete {
+        if reminder.isComplete {
             
             //make the text a middle green color with strikethrough
             let attrs: [NSAttributedString.Key: Any] = [

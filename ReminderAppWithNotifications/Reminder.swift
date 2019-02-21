@@ -10,5 +10,5 @@ import Foundation
 
 struct Reminder: Codable {
     var title: String
-    var isCommplete: Bool
+    var isComplete: Bool
 }
