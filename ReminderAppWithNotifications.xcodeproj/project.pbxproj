@@ -14,6 +14,9 @@
 		796C9A7A221E26FF00FAF81F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796C9A78221E26FF00FAF81F /* LaunchScreen.storyboard */; };
 		796C9A85221E26FF00FAF81F /* ReminderAppWithNotificationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C9A84221E26FF00FAF81F /* ReminderAppWithNotificationsTests.swift */; };
 		796C9A90221E270000FAF81F /* ReminderAppWithNotificationsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C9A8F221E270000FAF81F /* ReminderAppWithNotificationsUITests.swift */; };
+		796C9A9E221E283E00FAF81F /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C9A9D221E283E00FAF81F /* GroupViewController.swift */; };
+		796C9AA0221E294D00FAF81F /* ReminderGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C9A9F221E294D00FAF81F /* ReminderGroup.swift */; };
+		796C9AA2221E295900FAF81F /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C9AA1221E295900FAF81F /* Reminder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		796C9A8B221E26FF00FAF81F /* ReminderAppWithNotificationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReminderAppWithNotificationsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		796C9A8F221E270000FAF81F /* ReminderAppWithNotificationsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderAppWithNotificationsUITests.swift; sourceTree = "<group>"; };
 		796C9A91221E270000FAF81F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		796C9A9D221E283E00FAF81F /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		796C9A9F221E294D00FAF81F /* ReminderGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderGroup.swift; sourceTree = "<group>"; };
+		796C9AA1221E295900FAF81F /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +105,10 @@
 			children = (
 				796C9A6F221E26FD00FAF81F /* AppDelegate.swift */,
 				796C9A71221E26FD00FAF81F /* ViewController.swift */,
+				796C9A9D221E283E00FAF81F /* GroupViewController.swift */,
 				796C9A73221E26FD00FAF81F /* Main.storyboard */,
+				796C9A9F221E294D00FAF81F /* ReminderGroup.swift */,
+				796C9AA1221E295900FAF81F /* Reminder.swift */,
 				796C9A76221E26FF00FAF81F /* Assets.xcassets */,
 				796C9A78221E26FF00FAF81F /* LaunchScreen.storyboard */,
 				796C9A7B221E26FF00FAF81F /* Info.plist */,
@@ -256,8 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				796C9A9E221E283E00FAF81F /* GroupViewController.swift in Sources */,
+				796C9AA0221E294D00FAF81F /* ReminderGroup.swift in Sources */,
 				796C9A72221E26FD00FAF81F /* ViewController.swift in Sources */,
 				796C9A70221E26FD00FAF81F /* AppDelegate.swift in Sources */,
+				796C9AA2221E295900FAF81F /* Reminder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +445,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J63UEA4RCQ;
 				INFOPLIST_FILE = ReminderAppWithNotifications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,6 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J63UEA4RCQ;
 				INFOPLIST_FILE = ReminderAppWithNotifications/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
