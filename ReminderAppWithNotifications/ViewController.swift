@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class ViewController: UITableViewController {
     
@@ -19,7 +20,22 @@ class ViewController: UITableViewController {
         title = "Reminder App"
         load()
         
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Schedule", style: .plain, target: self, action: #selector(scheduleNotifications))
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewGroup))
+        
+    }
+        
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: .alert) { granted, error in
+            if granted == false {
+                print("We need permission")
+            }
+        }
     }
 
     func load() {
@@ -118,6 +134,35 @@ class ViewController: UITableViewController {
         
         // write the new reminders to the user defaults
         save()
+    }
+    
+    @objc func scheduleNotifications() {
+        // remove all existing notifications from this app
+        let center = UNUserNotificationCenter.current()
+        center.removeAllDeliveredNotifications()
+        center.removeAllPendingNotificationRequests()
+        
+        for group in groups {
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 7, repeats: false)
+            for reminder in group.items {
+                guard !reminder.isComplete else { continue }
+                let content = UNMutableNotificationContent()
+                content.title = reminder.title
+                
+                //tell iOS to group notifications based on the notification group name
+                content.threadIdentifier = group.name
+                content.summaryArgument = "\(group.name)"
+                
+                //wrap the content and trifgger up oin a request, giving it a random identifier
+                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                
+                center.add(request) { error in
+                    if let error = error {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
     }
 }
 
