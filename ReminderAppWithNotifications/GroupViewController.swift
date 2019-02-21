@@ -9,11 +9,13 @@
 import UIKit
 
 class GroupViewController: UITableViewController {
+    
+    weak var delegate: ViewController?
+    var group: ReminderGroup!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
 
