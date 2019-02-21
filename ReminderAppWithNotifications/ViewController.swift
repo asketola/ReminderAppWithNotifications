@@ -104,5 +104,20 @@ class ViewController: UITableViewController {
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(ac, animated: true)
     }
+    
+    func update(_ group: ReminderGroup) {
+        guard let selectedIndex = selectedIndex else {
+            fatalError("attempted to update a group without a selection")
+        }
+        //update our groups array with the changed reminder
+        groups[selectedIndex] = group
+        
+        // refresh tableview for that group
+        let indexPath = IndexPath(row: selectedIndex, section: 0)
+        tableView.reloadRows(at: [indexPath], with: .none)
+        
+        // write the new reminders to the user defaults
+        save()
+    }
 }
 
